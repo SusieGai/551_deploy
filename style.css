@@ -2,10 +2,10 @@
     background-color: #0a0a0a;
 }
 .navbar-default .navbar-nav li a{
-    color: #eee;
+    color: rgb(104, 151, 243);
 }
 .navbar-default .navbar-nav li a:hover{
-    color: white;
+    color: rgb(194, 218, 245);
 }
 
 .panel-heading{
