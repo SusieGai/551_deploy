@@ -15,10 +15,11 @@
                     <li><a href="index.html"><b>Home</b></a></li>
                     <li><a href="h1b.html"><b>H1B Info</b></a></li>
                     <li><a href="page.html"><b>Job List</b></a></li>
+                    <li><a href="course.html"><b>Course List</b></a></li>
                 </ul>
             </div>
     </nav>
-    <h2> Job List </h2>
+    <h2> Data Science Related Job List (LA) </h2>
     <ul id="list">
     </ul>
 
@@ -47,25 +48,25 @@
         function addItemToList(title, company, date, jobDesc, location, rating) {
             var ul = document.getElementById('list');
             var header = document.createElement('h4');
-            var _title = document.createElement('li');
-            var _company = document.createElement('li');
+            //var _title = document.createElement('li');
+            //var _company = document.createElement('li');
             var _date = document.createElement('li');
             var _jobDesc = document.createElement('li');
             var _location = document.createElement('li');
             var _rating = document.createElement('li');
 
-            header.innerHTML = 'Data Related Job - ' + (++stdNo);
-
-            _title.innerHTML = 'Job Title: ' + title;
-            _company.innerHTML = 'CompanyName: ' + company;
+            //header.innerHTML = 'Data Related Job - ' + (++stdNo);
+            header.innerHTML = 'Job ' + (++stdNo) + ': ' + company + ' - ' + title;
+            //_title.innerHTML = 'Job Title: ' + title;
+            //_company.innerHTML = 'CompanyName: ' + company;
             _date.innerHTML = 'Date: ' + date;
             _jobDesc.innerHTML = 'Job Description: ' + jobDesc;
             _location.innerHTML = 'Location: ' + location;
             _rating.innerHTML = 'Rating: ' + rating;
 
             ul.appendChild(header);
-            ul.appendChild(_title);
-            ul.appendChild(_company);
+            //ul.appendChild(_title);
+            //ul.appendChild(_company);
             ul.appendChild(_date);
             ul.appendChild(_jobDesc);
             ul.appendChild(_location);
