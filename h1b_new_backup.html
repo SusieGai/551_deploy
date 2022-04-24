@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
@@ -23,8 +24,8 @@
 
     <div class="container">
         <div>
-            <div class="panel-heading"><Center>Data Science Course List</center></div>
-          <div class="panel-body"><Center>You can find all course information below and try to find some course you need!!!</center></div>
+            <div class="panel-heading"><Center>Data Science H1B report (top 100)</center></div>
+          <div class="panel-body"><Center>Relative occupation/Area H1B report for year 2021</center></div>
         </div>
       </div>
 
@@ -34,20 +35,24 @@
             <table class="table table-bordered table-hover">
               <tbody>
                 <tr>
-                  <td class="col-md-6">Type of Course</td>
+                  <td class="col-md-6">Occupation/Area</td>
                   <td class="col-md-6">
                     <div class="form-group">
-                      <select id = "course" name="Course" onchange="FetchAllData()">
-                        <option value="python">Python</option>
-                        <option value="sql">SQL</option>
-                        <option value="data_science_course">Data Science</option>
+                      <select id = "h1b" name="H1B"  onchange="FetchAllData()">
+                        <option value="h1b_LA">h1b_LA</option>
+                        <option value="Computer_Systems_Design_and_Related_Services">Computer_Systems_Design_and_Related_Services</option>
+                        <option value="Software_Developers_Systems_Software">Software_Developers_Systems_Software</option>
+                        <option value="Computer_and_Information_Systems_management">Computer_and_Information_Systems_management</option>
+                        <option value="Database_Administrators">Database_Administrators</option>
+                        <option value="Computer_and_Information_Research_Scientists">Computer_and_Information_Research_Scientists</option>
+                        <option value="Data_Warehousing_Specialists">Data_Warehousing_Specialists</option>
                       </select>
                     </div>
                   </td>
                 </tr>
                 <!-- <tr>
                   <td colspan="2">
-                    <button type="button" onclick="FetchAllData()"> Get Course Information </button>
+                    <button type="button" onclick="FetchAllData()"> Get H1B Information </button>
                   </td>
                 </tr> -->
               </tbody>
@@ -56,22 +61,13 @@
         </div>
     </div>
 
-    <div class="container">
+     <div class="container">
         <table class="table" id = 'ex-table'>
             <tr id="hhh">
             </tr>
         </table>
-    </div>
+    </div> 
 
-    <!-- <table style="width:70%" id="ex-table">
-        <tr id="tr">
-            <th>Course</th>
-            <th>Level</th>
-            <th>Rate</th>
-            <th>Conclusion</th>
-            <th>Link</th>
-        </tr>
-    </table> -->
 
     <title>Firebase</title>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -83,37 +79,35 @@
 
     <script id="MainScript">
         var firebaseConfig = {
-            apiKey: "AIzaSyCh8lAAnJYcll360Mhsn7c60EW1bTJ62rc",
-            authDomain: "projectdata-2d03b.firebaseapp.com",
-            databaseURL: "https://projectdata-2d03b-default-rtdb.firebaseio.com",
-            projectId: "projectdata-2d03b",
-            storageBucket: "projectdata-2d03b.appspot.com",
-            messagingSenderId: "925975333792",
-            appId: "1:925975333792:web:eb0e21dd35d0f5761ab2c5",
-            measurementId: "G-QRPFHDK2KB"
+            apiKey: "AIzaSyBR9y26seFnr3wyCXAQuz8thlUKKJ-LHGA",
+            authDomain: "h1b-la.firebaseapp.com",
+            databaseURL: "https://h1b-la-default-rtdb.firebaseio.com",
+            projectId: "h1b-la",
+            storageBucket: "h1b-la.appspot.com",
+            messagingSenderId: "1089185357986",
+            appId: "1:1089185357986:web:0681d06e0e4c446bd0f7fb",
+            measurementId: "G-MJXY32237R"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 
         function FetchAllData() {
-            var input = document.getElementById('course').value;
+            var input = document.getElementById('h1b').value;
 
             firebase.database().ref(input).once('value', function (snapshot) {
                 if (snapshot.exists()) {
                     var content = '';
-                    content += '<th>' + 'Course' + '</th>';
-                    content += '<th>' + 'Level' + '</th>';
-                    content += '<th>' + 'Rate' + '</th>';
-                    content += '<th>' + 'Conclusion' + '</th>';
-                    content += '<th>' + 'Link' + '</th>';
+                    content += '<th>' + 'Rank' + '</th>';
+                    content += '<th>' + 'Sponsor Company Name' + '</th>';
+                    content += '<th>' + 'Number of Sponsorship' + '</th>';
+                    content += '<th>' + 'Average Salary' + '</th>';
                     snapshot.forEach(function (data) {
                         var val = data.val();
                         content += '<tr>';
-                        content += '<td>' + val.Course + '</td>';
-                        content += '<td>' + val.Level + '</td>';
-                        content += '<td>' + val.Rate + '</td>';
-                        content += '<td>' + val.Conclusion + '</td>';
-                        content += '<td>' + '<a href=' +val.Link+ '>' + val.Link+'</a>'+'</td>';
+                        content += '<td>' + val.rank + '</td>';
+                        content += '<td>' + val.sponsor + '</td>';
+                        content += '<td>' + val.count + '</td>';
+                        content += '<td>' + val.salary + '</td>';
                         content += '</tr>';
                     });
                     // $('#ex-table').append(content);

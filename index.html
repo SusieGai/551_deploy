@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="home.css"/>
 
 <head>
     <link rel="stylesheet" href="styles.css">
@@ -14,22 +16,23 @@
 
         .wrapper {
             top: 38%;
-            box-shadow: 0 0px 0px 0;
+            box-shadow: 0 0 0 0;
         }
 
-        .wrapper .center {
+        .center {
             width: 100%;
             padding: 30px 25px;
             text-align: center;
             color: #fff;
         }
 
-        .g-signin2 {
-            width: 100%;
+        .g-signin2 > div {
+            margin: 0 auto;
         }
 
-        .g-signin2>div {
-            margin: 0 auto;
+        .outer-main {
+            height: 130%;
+            width: 100vw;
         }
     </style>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -38,6 +41,7 @@
 </head>
 
 <body>
+<div class="outer-main">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
@@ -48,13 +52,49 @@
             </ul>
         </div>
     </nav>
-
     <div class="wrapper">
         <div class="center">
             <h1>Welcome to Job Hunting</h1>
         </div>
     </div>
 
+    <div class="main">
+        <div class="left" style="float: left; width: 60%">
+            <div class="main__container">
+                <div class="main__content">
+                    <h1 style="color:white">Are you looking for a Job or Internship?</h1>
+                    <h2 style="color:white"> we collected DA, DS, BA Internship in LA </h2>
+                    <button class="main__btn" >
+                        <i class="glyphicon glyphicon-search" style="color:rgb(0, 3, 8)"></i>
+                        <a href="page.html">Find a Job Here</a>
+                    </button>
+                </div>
+                <div class="main__content1">
+                    <h1 style="color:white">Do you want to get more information about H1B?</h1>
+                    <h2 style="color:white"> we collected H1B information </h2>
+                    <button class="main__btn">
+                        <i class="glyphicon glyphicon-indent-right" style="color:rgb(0, 3, 8)"></i>
+                        <a href="h1b.html">Get More Information</a>
+                    </button>
+                </div>
+                <div class="main__content2">
+                    <h1 style="color:white">Do you need to take some Courses for your Intern/Job?</h1>
+                    <h2 style="color:white"> We collect course about Data Science </h2>
+                    <button class="main__btn">
+                        <i class="glyphicon glyphicon-book" style="color:rgb(0, 3, 8)"></i>
+                        <a href="course.html">Find Course here</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="right" style="float:right; width: 40%; padding-left: 0%">
+            <div class="main__img__container">
+                <img src="images/home1.svg" alt='pic' id="main_img" width="100%"/>
+            </div>
+        </div>
+
+    </div>
+</div>
 </body>
 
 </html>

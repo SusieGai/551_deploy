@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #0a0a0a;
+    background-color: #F8F8F8;
 }
 .navbar-default .navbar-nav li a{
     color: rgb(104, 151, 243);
@@ -9,13 +9,30 @@
 }
 
 .panel-heading{
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .panel-body{
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .col-md-6{
     font-size: 22px;
 }
+
+table {
+    border-spacing: 1em 0.5em;
+    padding: 1 1em 1em 0;
+    border: 1px solid rgb(207, 211, 218);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  td {
+    padding:5px;
+    vertical-align: middle;
+  }
+
+  th[scope = "row"]{
+      background-color: aliceblue;
+  }
