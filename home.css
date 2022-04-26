@@ -32,6 +32,17 @@
     margin-left: 7%;
 }
 
+.main__content3 h1{
+    font-size: 3rem;
+    margin-left: 7%;
+    margin-top: 50px;
+}
+
+.main__content3 h2{
+    font-size: 2rem;
+    margin-left: 7%;
+}
+
 .main__btn {
     font-size: 2rem;
     margin-left: 7%;
